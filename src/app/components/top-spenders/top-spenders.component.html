@@ -1,0 +1,9 @@
+<div class="top-spenders">
+    <h3>Top Spending Users</h3>
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user.name }} - ₹{{ user.amount }}
+      </li>
+    </ul>
+  </div>
+  

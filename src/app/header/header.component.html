@@ -1,0 +1,22 @@
+<div class="header">
+    <!-- <div class="header-title">
+      <h1>Reimbursement</h1>
+    </div> -->
+    <div class="header-actions">
+      <mat-form-field appearance="outline" class="search-field">
+        <input matInput placeholder="Search" type="text">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <button mat-icon-button>
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-icon-button [matBadge]="notificationCount" matBadgeColor="warn">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <div class="user-profile">
+        <span>{{user.name}}</span>
+        <img [src]="user.avatar" alt="User profile">
+      </div>
+    </div>
+  </div>
+  

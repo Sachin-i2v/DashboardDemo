@@ -1,0 +1,42 @@
+<!-- sidebar.component.html -->
+<div class="sidebar" [ngClass]="{'collapsed': collapsed, 'light-theme': currentTheme === 'light'}">
+  <div class="sidebar-header">
+    <div class="logo-container">
+      <img *ngIf="!collapsed" src="assets/logo.svg" alt="Company Logo" class="full-logo">
+      <img *ngIf="collapsed" src="assets/logo-icon.svg" alt="Company Logo" class="icon-logo">
+    </div>
+    <div class="role-badge" *ngIf="!collapsed">{{userRole}}</div>
+    <button class="toggle-btn" (click)="toggleSidebar()">
+      <mat-icon>{{collapsed ? 'chevron_right' : 'chevron_left'}}</mat-icon>
+    </button>
+  </div>
+
+  <div class="menu-container">
+    <ul class="menu-list">
+      <li *ngFor="let item of menuItems" 
+          [class.active]="item.active"
+          (click)="setActiveItem(item.id)">
+        <div class="menu-item">
+          <div class="icon-container">
+            <mat-icon>{{item.icon}}</mat-icon>
+            <span *ngIf="item.hasNotification && !collapsed" class="notification-badge">
+              {{item.notificationCount}}
+            </span>
+            <div *ngIf="item.hasNotification && collapsed" class="dot-notification"></div>
+          </div>
+          <span class="item-label" *ngIf="!collapsed">{{item.label}}</span>
+        </div>
+        <div class="active-indicator" *ngIf="item.active"></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="theme-toggle">
+      <button (click)="toggleTheme()" [attr.aria-label]="'Switch to ' + (currentTheme === 'light' ? 'dark' : 'light') + ' mode'">
+        <mat-icon>{{currentTheme === 'light' ? 'dark_mode' : 'light_mode'}}</mat-icon>
+        <span *ngIf="!collapsed">{{currentTheme === 'light' ? 'Dark Mode' : 'Light Mode'}}</span>
+      </button>
+    </div>
+  </div>
+</div>

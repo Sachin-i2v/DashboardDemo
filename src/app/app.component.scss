@@ -1,0 +1,13 @@
+.app-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+  }
+  
