@@ -1,14 +1,6 @@
-"angular-dashboard": {
-  "architect": {
-    "build": {
-      "options": {
-        "outputPath": "dist/angular-dashboard/browser"
-      }
-    },
-    "serve": {
-      "options": {
-        "browserTarget": "angular-dashboard:build"
-      }
-    }
-  }
-}
+[build]
+  command = "ng build --configuration=production"
+  publish = "dist/angular-dashboard/browser"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
