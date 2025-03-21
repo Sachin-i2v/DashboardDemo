@@ -1,0 +1,14 @@
+"angular-dashboard": {
+  "architect": {
+    "build": {
+      "options": {
+        "outputPath": "dist/angular-dashboard/browser"
+      }
+    },
+    "serve": {
+      "options": {
+        "browserTarget": "angular-dashboard:build"
+      }
+    }
+  }
+}
