@@ -1,9 +1,31 @@
-<div class="top-spenders">
-    <h3>Top Spending Users</h3>
-    <ul>
-      <li *ngFor="let user of users">
-        {{ user.name }} - ₹{{ user.amount }}
-      </li>
-    </ul>
+<div class="top-spenders-container">
+  <div class="top-spenders-header">
+    <div class="title">Top spending users</div>
+    <div class="dropdown">
+      <span>This Month</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
   </div>
   
+  <div class="table-header">
+    <div class="username-header">USERNAME</div>
+    <div class="amount-header">AMOUNT (INR)</div>
+  </div>
+  
+  <div class="user-list">
+    <div class="user-item" *ngFor="let user of users">
+      <div class="user-info">
+        <div class="avatar-container">
+          <div class="avatar"></div>
+        </div>
+        <div class="user-details">
+          <div class="user-name">{{ user.name }}</div>
+          <div class="user-role">{{ user.role }}</div>
+        </div>
+      </div>
+      <div class="amount">₹ {{ user.amount | number:'1.0-0' }}</div>
+    </div>
+  </div>
+</div>

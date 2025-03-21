@@ -1,0 +1,33 @@
+<div class="top-violators-container">
+    <div class="top-violators-header">
+      <div class="title">Top violators</div>
+      <div class="dropdown">
+        <span>This Year</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
+    
+    <div class="violator-list">
+      <div class="violator-item" *ngFor="let violator of violators">
+        <div class="violator-info">
+          <div class="avatar-container">
+            <div class="avatar"></div>
+          </div>
+          <div class="violator-details">
+            <div class="violator-name">{{ violator.name }}</div>
+            <div class="violator-role">{{ violator.role }}</div>
+          </div>
+        </div>
+        <div class="violation-details">
+          <div class="amount">₹ {{ violator.amount | number:'1.0-0' }}</div>
+          <div class="expenses">({{ violator.expenses }} Expenses)</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="view-all-container">
+      <button class="view-all-button">View All</button>
+    </div>
+  </div>
